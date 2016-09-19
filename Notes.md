@@ -241,3 +241,39 @@ var buffer3 = Buffer.concat([buffer1, buffer2]);
 console.log("buffer3 content: " + buffer3.toString());
 ```
 
+### Compare Buffers
+
+#### Syntax
+
+Syntax of the method to compare two Node buffers:
+
+```javascript
+buf.compare(otherBuffer);
+```
+
+#### Parameters
+
+* **otherBuffer** This is the other buffer which will be compared with **buf**.
+
+#### Return Value
+
+Returns a number indicating whether this comes before or after or is the same as the other Buffer in sort order.
+
+#### Example
+
+```javascript
+var buffer1 = new Buffer('ABC');
+var buffer2 = new Buffer('ABCD');
+var result = buffer1.compare(buffer2);
+
+if(result < 0) {
+	console.log(buffer1 + " comes before " buffer2);
+} else if(result == 0) {
+	console.log(buffer1 + " is same as " + buffer2);
+} else {
+	console.log(buffer1 + " comes after " + buffer2);
+}
+```
+
+In this example, the expected result is: `ABC comes before ABCD`
+
