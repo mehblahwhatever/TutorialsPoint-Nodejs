@@ -1,11 +1,23 @@
-var buffer1 = new Buffer('ABC');
-var buffer2 = new Buffer('ABCD');
-var result = buffer1.compare(buffer2);
+var fs = require("fs");
+var data = '';
 
-if(result < 0) {
-	console.log(buffer1 + " comes before " + buffer2);
-} else if (result == 0) {
-	console.log(buffer1 + " is the same as " + buffer2);
-} else {
-	console.log(buffer1 + " comes after " + buffer2);
-}
+// Create a readable stream
+var readerStream = fs.createReadStream('input.txt');
+
+// Set the encoding to be utf8
+readerStream.setEncoding('UTF8');
+
+// Handle stream events --> data, end, and error
+readerStream.on('data', function (chunk) {
+	data += chunk;
+});
+
+readerStream.on('end', function () {
+	console.log(data);
+});
+
+readerStream.on('error', function (err) {
+	console.log(err.stack);
+});
+
+console.log("Program Ended");
