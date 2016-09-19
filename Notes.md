@@ -7,3 +7,12 @@
 * **Single Threaded but Highly Scalable** Node.js uses a single threaded model with event looping. Event mechanism helps the server to respond in a non-blocking way and makes the server highly scalable as opposed to traditional servers which create limited threads to handle requests. Node.js uses a single threaded program and the same program can provide service to a much larger number of requests than traditional servers like Apache HTTP Server.
 * **No Buffering** Node.js applications never buffer any data. These applications simply output the data in chunks.
 * **License** Node.js is released under the MIT license.
+
+## Node.js target applications
+
+* I/O bound Applications
+* Data Streaming Applications
+* Data Intensive Real Time Applications (DIRT)
+* JSON APIs based Applications
+* Single Page Applications
+* **NOT** CPU intensive Applications
