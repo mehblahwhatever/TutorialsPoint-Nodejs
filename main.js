@@ -1,7 +1,4 @@
-buf = new Buffer(26);
-for(var i = 0; i< 26; i++) {
-	buf[i] = i + 97;
-}
+var buf = new Buffer('Simply Easy Learning');
+var json = buf.toJSON();
 
-console.log(buf.toString('ascii'));
-console.log(buf.toString('ascii', 0, 5));
+console.log(json);

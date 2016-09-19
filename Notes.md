@@ -191,3 +191,25 @@ console.log(buf.toString(undefined, 0, 5));
 ```
 
 ### Convert Buffer to JSON
+
+#### Syntax
+
+Syntax of the method to convert a Node Buffer into a JSON object:
+
+```javascript
+buf.toJSON();
+```
+
+#### Return Value
+
+This method returns a JSON-representation of teh Buffer instance.
+
+#### Example
+
+```javascript
+var buf = new Buffer('Simply Easy Learning');
+var json = buf.toJSON();
+
+console.log(json);
+```
+
