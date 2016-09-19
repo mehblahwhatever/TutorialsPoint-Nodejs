@@ -117,6 +117,39 @@ Create Buffer from given string and encoding type:
 var buf = new Buffer("Simply Easy Learning", "utf-8");
 ```
 
+### Writing to Buffers
+
+#### Syntax
+
+The syntax of the method to write into a Node Buff:
+
+```javascript
+buf.write(string[, offset][, length][, encoding])
+```
+
+#### Parameters
+
+* **string** This is the string data to be written to the buffer.
+* **offset** This is the index of the buffer to start writing at. Default value is 0.
+* **length** This is the number of bytes to write. Defaults to buffer.length.
+* **encoding** Encoding to use. 'utff8' is the default encoding.
+
+#### Return value
+
+The method returns the number of octets written. If there is not enough space in the buffer to fit the entire string, it will write a part of the string.
+
+#### Example
+
+```javascript
+buf = new Buffer(256);
+len = buf.write("Simply Easy Learning");
+
+console.log("Octets written : " + len);
+```
+
+When executed, it should output: `Octects written : 20`
+
+### Reading from Buffers
 
 
 
