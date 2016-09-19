@@ -83,3 +83,52 @@ Event | Description
 **newListener** | This event is emitted any time a listener is added. When this event is triggered, the listener may not yet have been added to the array of listeners for the event.
 **removeListener** | This event is emmitted any time someone removes a listener. When this event is triggered, the listener may not yet have been removed from the array of listeners for the event.
 
+## Buffers
+
+Pure JavaScript is Unicode friendly but not nice to binary data. When dealing with TCP streams or the file system, it's necessary to handle octet streams. Node provides Buffer class which provides instances to store raw data similar to an array of integers but corresponds to a raw memory allocation outside the V8 heap.
+
+Buffer class is a global class and can be accessed in an application without importing a buffer module.
+
+### Creating Buffers
+
+Node Buffer can be constructed in a variety of way.
+
+#### Method 1
+
+Create an uninitiated Buffer of 10 octets:
+
+```javascript
+var buf = new Buffer(10);
+```
+
+#### Method 2
+
+Create a Buffer from a given array:
+
+ ```javascript
+ var buf = new Buffer([10, 20, 30, 40, 50]);
+ ```
+
+#### Method 3
+
+Create Buffer from given string and encoding type:
+
+```javascript
+var buf = new Buffer("Simply Easy Learning", "utf-8");
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
