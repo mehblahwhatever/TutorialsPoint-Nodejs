@@ -277,3 +277,106 @@ if(result < 0) {
 
 In this example, the expected result is: `ABC comes before ABCD`
 
+### Copy Buffer
+
+#### Syntax
+
+Syntax of the method to copy a node buffer:
+
+```javascript
+buf.copy(targetBuffer[, targetStart][, sourceStart][, sourceEnd]);
+```
+
+#### Parameters
+
+* **targetBuffer** Buffer object where buffer will be copied.
+* **targetStart** Number, Optional, Default: 0
+* **sourceStart** Number, Optional, Default: 0
+* **sourceEnd** Number, Opitonal, Default: buffer.length
+
+#### Return Value
+
+No return value. Copies data from a region of this buffer to a region in the target buffer even if the target memory overlaps with the source. If undefined, the targetStart and sourceStart parameters default to 0 while the sourceEnd defaults to buffer.length.
+
+#### Example
+
+```javascript
+var buffer1 = new Buffer('ABC');
+var buffer2 = new BUffer(3);
+
+buffer1.copy(buffer2);
+console.log("buffer2 content: " + buffer2.toString());
+```
+
+When executed, it produces: `buffer2 content: ABC`
+
+### Slice Buffer
+
+#### Syntax
+
+Syntax of the method to get a sub-buffer of a node buffer:
+
+```javascript
+buf.slice([start][, end]);
+```
+
+#### Parameters
+
+* **start** Number, Optional, Default: 0
+* **end** Number, Optional, Default: buf.length
+
+#### Return Value
+
+Returns a new buffer which references the same memory as the old, but offset and cropped by the start (defaults to 0) and end (defaults to buf.length) indices. Negative indices start from the end of the buffer.
+
+#### Example
+
+```javascript
+var buffer1 = new Buffer('TutorialsPoint');
+var buffer2 = buffer1.slice(0, 9);
+console.log("buffer2 content: " + buffer2.toString());
+```
+
+When executed, this produces: `buffer2 content: Tutorials`
+
+### Buffer Length
+
+#### Syntax
+
+Syntax of the method to get a size of the node buffer in bytes:
+
+```javascript
+buf.length;
+```
+
+#### Return Value
+
+Returns a size of buffer in bytes.
+
+#### Example
+
+```javascript
+var buffer = new Buffer('TutorialsPoint');
+console.log("buffer length: " + buffer.length);
+```
+
+When executed, outputs: `buffer length: 14`
+
+## Streams
+
+### What Are Streams?
+
+Four types of streams:
+
+* **Readable** Stream which is used for read operation
+* **Writable** Stream which is used for write operation
+* **Duplex** Stream which can be used for both read and write operation
+* **Transform** Duplex where the output is computed based on input
+
+Streams are **EventEmitter** instances and throw several evants and different times.  Commonly used events are:
+
+* **data** This event is fired when there is data available to read
+* **end** This event is fired when there is no more data to read
+* **error** This event is fired when there is any error receiving or writing data
+* **finish** This event is fired when all data has been flushed to underlying system
+
