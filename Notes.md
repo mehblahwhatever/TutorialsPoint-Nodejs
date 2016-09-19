@@ -16,3 +16,12 @@
 * JSON APIs based Applications
 * Single Page Applications
 * **NOT** CPU intensive Applications
+
+## REPL
+
+**REPL** stands for **Read** **Evaluate** **Print** **Loop** and it represents a computer environment like a window console or a Unix/Linux shell where a command is entered and system responds with an output in interactive mode. Node.js or Node comes bundled with a REPL environment. It performs the following desired tasks:
+* **Read** Reads user's input, parse the input into JavaScript data-structure and stores in memory.
+* **Evaluate** Takes and evaluates the data structure
+* **Print** Prints the result
+* **Loop** Loops the above command until user presses **ctrl-c** twice
+
