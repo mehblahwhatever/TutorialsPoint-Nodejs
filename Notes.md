@@ -25,3 +25,32 @@
 * **Print** Prints the result
 * **Loop** Loops the above command until user presses **ctrl-c** twice
 
+## Event Driven Programming
+
+Node.js uses events heavily and it is also one of the reasons why Node.js is pretty fast compared to other similar technologies. As soon as Node starts its server, it simply initiates its variables, declares functions and then simply waits for the event to occur.
+
+In an event-driven application, there is generally a main loop that listens for events, and then triggers a call back function when one of those events is detected.
+
+While events seem similar to callbacks, the differenct lies in the fact that callback functions are called when an asynchronous function returns its result, whereas event handling works on the **observer** pattern. The functions which listen listen to events act as observers. Whenever an event gets fired, its listener function starts executing. Node.js has multiple in-built events available through the **events** module and **EventEmitter** class which is used to bind events and event listeners as follows:
+
+```javascript
+// Import events module
+var events = require('events');
+
+// Create an EventEmitter object
+var eventEmitter = new events.EventEmitter();
+```
+
+The following is the syntax to bind the event handler with an event;
+
+```javascript
+// Bind event and event handler as follows
+eventEmitter.on('eventName', eventHandler);
+```
+
+Fire and event programmatically as follows:
+
+```javascript
+// Fire an event
+eventEmitter.emit('eventName');
+```
