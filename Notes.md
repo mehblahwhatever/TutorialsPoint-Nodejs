@@ -213,3 +213,31 @@ var json = buf.toJSON();
 console.log(json);
 ```
 
+### Concatenate Buffers
+
+#### Syntax
+
+Syntax of the method to concatenate Node buffers to a single Node Buffer:
+
+```javascript
+Buffer.concat(list[, totalLength]);
+```
+
+#### Parameters
+
+* **list** Array List of Buffer objects to be concatenated.
+* **totalLength** This is the total length of the buffers when concatenated.
+
+#### Return Value
+
+This method returns a Buffer instance.
+
+#### Example
+
+```javascript
+var buffer1 = new Buffer('TutorialsPoint ');
+var buffer2 = new Buffer('Simply Easy Learning');
+var buffer3 = Buffer.concat([buffer1, buffer2]);
+console.log("buffer3 content: " + buffer3.toString());
+```
+
