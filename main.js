@@ -1,13 +1,7 @@
 var fs = require("fs");
+var zlib = require('zlib');
 
-// Create a readable stream
-var readerStream = fs.createReadStream('input.txt');
+// Compress the file input.txt to input.txt.gz
+fs.createReadStream('input.txt').pipe(zlib.createGzip()).pipe(fs.createWriteStream('input.txt.gz'));
 
-// Create a writable stream
-var writerStream = fs.createWriteStream('output.txt');
-
-// Pipe the read and wrtie operations
-// read input.txt and write data to output.txt
-readerStream.pipe(writerStream);
-
-console.log("Program Ended");
+console.log("File Compressed");
